@@ -1,3 +1,5 @@
+eslint semi: ["error", "always"]
+
 <template>
   <div id="app">
     <img src="">
@@ -9,11 +11,11 @@
       </h4>
     </div>
     <table>
-        <OwMachine v-for="owMachine in owMachines"
+        <owMachine v-for="owMachine in owMachines"
                  :key="owMachine.id"
-                 v-bind:OwMachine="owMachine"
+                 v-bind:AttrOwMachine="owMachine"
                  v-if="!hideOffOwMachines || owMachine.isOn">
-        </OwMachine>
+        </owMachine>
     </table>
     <form @submit.prevent="addOwMachine" class="form">
       <input type="text" placeholder="Nom de la machine" v-model="buffer.name">
@@ -34,7 +36,7 @@ export default {
       hideOffOwMachines: false,
       message: 'list of machines',
       buffer: {
-        id: 3, name: 'Next machine name', isOn: true
+        id: 4, name: 'Next machine name', isOn: true
       },
       owMachines: [
         {id: 1, name: 'Machine Hanamura', isOn: true},
@@ -51,7 +53,7 @@ export default {
         id: this.buffer.id,
         name: this.buffer.name,
         isOn: this.buffer.isOn
-      });
+      })
     }
   }
 }
@@ -66,7 +68,10 @@ export default {
     color: #2c3e50;
     margin-top: 60px;
   }
-table {
+table{
+  list-style-type: none;
+}
+tr {
   display:  block;
 }
 </style>

@@ -4,9 +4,9 @@ import App from './App'
 import ToggleButton from 'vue-js-toggle-button'
 Vue.use(ToggleButton)
 
-Vue.component('OwMachine', {
-  template: '<tr :class="{ active: OwMachine.isOn }">{{OwMachine.name}}<toggle-button :value="OwMachine.isOn" @change="OwMachine.isOn = !OwMachine.isOn"/></tr>',
-  props: ['OwMachine']
+Vue.component('owMachine', {
+  template: '<tr :class="{ active: AttrOwMachine.isOn }">{{AttrOwMachine.name}}<toggle-button :value="AttrOwMachine.isOn" @change="AttrOwMachine.isOn = !AttrOwMachine.isOn"/></tr>',
+  props: ['AttrOwMachine']
 })
 
 new Vue({ // eslint-disable-line no-new
